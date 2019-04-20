@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import Navbar from './components/Navbar'
+import { BrowserRouter, Route } from 'react-router-dom'
+import Home from './components/Home'
+import Cart from './components/Cart'
+import Inventory from './components/Inventory'
 
 class App extends Component {
   
@@ -54,23 +59,18 @@ class App extends Component {
 
 
     return (
-<div>
-<form>            
-  <div class="form-group">
-    <label for="exampleInputEmail1">Login</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
-  </div>
-  <button type="submit" class="btn btn-primary mb-2">User Login</button>
-  <br></br><br></br><br></br><br></br>
-</form>
-</div>
-    );
+      <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <Route path="/" component={Home} />
+        <Route path="/cart" component={Cart} />
+        <Route path="/inventory" component={Inventory} />
+      </div>
+    </BrowserRouter>
+    )
   }
 }
+
+
  
  export default App;
