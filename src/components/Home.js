@@ -9,7 +9,7 @@ export class Home extends Component {
        
          return ( 
            <div>
-             
+             LIACC in a can!
            </div>
          ) 
         }
